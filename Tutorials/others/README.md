@@ -16,10 +16,11 @@ This application demonstrates a more complex interface containing user search, t
 
 ## Prerequisites
 
-To compile and run these JavaFX applications using modern Java, you must download the JavaFX SDK.
+To compile and run these JavaFX applications, you will need Java 21 and the OpenJFX SDK 21.0.2 (or a similar compatible version).
 
-1. Download the correct version of the OpenJFX SDK for your operating system from the [Gluon JavaFX download page](https://gluonhq.com/products/javafx/).
-2. Extract the downloaded zip/tar file into a known directory. For this guide, we will assume it is extracted to `/path/to/javafx-sdk`.
+1. Ensure you have Java 21 installed.
+2. Download the OpenJFX SDK 21.0.2 for your operating system from the [Gluon JavaFX download page](https://gluonhq.com/products/javafx/).
+3. Extract the downloaded zip/tar file into a known directory. For this guide, we will assume it is extracted to `/path/to/javafx-sdk`.
 
 ## Compiling the Applications
 
