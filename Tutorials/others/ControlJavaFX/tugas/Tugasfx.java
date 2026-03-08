@@ -33,7 +33,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Popup;
 import javafx.stage.Stage;
 
-public class Tugasfx<TabelView> extends Application {
+public class Tugasfx extends Application {
 	String namaFile = "dataset.txt"; // kalo ga berhasil munculin full directorinya
 	List<String> inputText;
 	
@@ -218,25 +218,25 @@ public class Tugasfx<TabelView> extends Application {
         		bp.getChildren().remove(tp);
         		btn.setText("Kembali");
         		
-        		TableView tabel = new TableView();
+			TableView<DataTransaksi> tabel = new TableView<>();
         		ArrayList<DataTransaksi> rekapTransaksi = new ArrayList<>();
         		
         		for(DataTransaksi d:akunSesiIni) {
-        			if(angkaRekening.getText().equals(d.noRekening.get())) {
+				if(angkaRekening.getText().equals(d.getNoRekening())) {
         				rekapTransaksi.add(d);
         			}
         		}
         		
         		ObservableList<DataTransaksi> data = FXCollections.observableList(rekapTransaksi);
                 
-        		TableColumn column1 = new TableColumn ("Uraian");
-        		column1.setCellValueFactory(new PropertyValueFactory<DataTransaksi, String>("tanggal"));
-        		TableColumn column2 = new TableColumn<>("Tipe");
-        		column2.setCellValueFactory(new PropertyValueFactory<DataTransaksi, String>("tipe"));
-        		TableColumn column3 = new TableColumn<>("Nominal");
-        		column3.setCellValueFactory(new PropertyValueFactory<DataTransaksi, String>("nominal"));
-        		TableColumn column4 = new TableColumn<>("Saldo Akhir");
-        		column4.setCellValueFactory(new PropertyValueFactory<DataTransaksi, String>("saldoAkhir"));
+			TableColumn<DataTransaksi, String> column1 = new TableColumn<>("Uraian");
+			column1.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTanggal()));
+			TableColumn<DataTransaksi, String> column2 = new TableColumn<>("Tipe");
+			column2.setCellValueFactory(new PropertyValueFactory<>("tipe"));
+			TableColumn<DataTransaksi, String> column3 = new TableColumn<>("Nominal");
+			column3.setCellValueFactory(new PropertyValueFactory<>("nominal"));
+			TableColumn<DataTransaksi, String> column4 = new TableColumn<>("Saldo Akhir");
+			column4.setCellValueFactory(new PropertyValueFactory<>("saldoAkhir"));
         		
         		tabel.getItems().add(new DataTransaksi("sf","", "", "", "", ""));
         		tabel.getColumns().addAll(column1, column2, column3, column4);
