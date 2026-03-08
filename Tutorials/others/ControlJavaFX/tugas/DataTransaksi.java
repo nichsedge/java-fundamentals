@@ -23,26 +23,49 @@ public class DataTransaksi {
 	public String getNoRekening() {
 		return noRekening.get();
 	}
+
+	public SimpleStringProperty noRekeningProperty() {
+		return noRekening;
+	}
 	
 	public String getNamaTipe() {
 		return namaTipe.get();
+	}
+
+	public SimpleStringProperty namaTipeProperty() {
+		return namaTipe;
 	}
 	
 	public String getTanggal() {
 		return namaTipe.get() +"\n" +tanggal.get();
 	}
+
+	public SimpleStringProperty tanggalProperty() {
+		return tanggal;
+	}
 	
 	public String getTipe() {
 		return tipe.get();
+	}
+
+	public SimpleStringProperty tipeProperty() {
+		return tipe;
 	}
 	
 	public String getNominal() {
 		return nominal.get();
 	}
-	
+
+	public SimpleStringProperty nominalProperty() {
+		return nominal;
+	}
 	
 	public String getSaldoAkhir() {
 		return saldoAkhir.get();
+	}
+
+	public SimpleStringProperty saldoAkhirProperty() {
+		return saldoAkhir;
 	}
 	
 	
